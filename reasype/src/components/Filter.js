@@ -177,7 +177,7 @@ export default function Filter(props) {
     return (
         <div className="filter-page--container">
             <div className="filter--header">
-                <h3>Reasype</h3>
+                <h3>R E A S Y P E</h3>
                 <p>Please set any of the filter to generate a recipe based on your wish</p>    
             </div>
             <div className="form"> 
