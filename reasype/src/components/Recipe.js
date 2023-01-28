@@ -26,8 +26,7 @@ export default function Recipe(props) {
         return obj;
     }
 
-    // console.log(props.resultRecipe)
-    return (
+    let recipe = (
         <div className="recipe--container">
             <div className="recipe--header"><h1>{props.resultRecipe.label}</h1></div>
             <div className="image-container">
@@ -73,6 +72,25 @@ export default function Recipe(props) {
             <div className="generate-button">
                 <button onClick={props.resetRecipe}>New Recipe</button>
             </div>
+        </div>
+    )
+
+    let noResult = (
+    <div className="recipe--container">
+        <div className="recipe--header"><h1>No result found</h1></div>
+        
+        <div className="generate-button">
+            <button onClick={props.resetRecipe}>New Recipe</button>
+        </div>
+    </div>)
+
+    let recipePage = props.resultRecipe.ingredientLines ? recipe : noResult
+
+    // console.log(props.resultRecipe)
+    return (
+        <div>
+            {recipePage}
+
         </div>
     )
 }
