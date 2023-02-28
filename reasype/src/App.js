@@ -1,6 +1,7 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
+import Footer from './components/Footer';
 import Fork from "./fork.png"
 import Knife from "./knife.png"
 import './styles.css'
@@ -154,6 +155,7 @@ export default function App() {
                 </div>
                 <img src={Knife} alt="" className="knife"/>
             </div>
+            <Footer />
         </div>
     );
 }
