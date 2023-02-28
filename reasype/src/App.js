@@ -1,16 +1,12 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Fork from "./fork.png"
 import Knife from "./knife.png"
 import './styles.css'
-// import dataJson from './data.json'
-// import axiosImport from 'axios';
-// import axios from 'axios';
+
 import axios from 'axios'
-
-
 
 
 
@@ -76,42 +72,11 @@ export default function App() {
       });
     }, [optionsData])
 
-    // React.useEffect(() => {
-    //   const axios = require("axios");
-
-
-    
-    // const getData=()=>{
-    //     console.log("input data :" + optionsData.q + optionsData.diet + optionsData.ingr + optionsData.excluded + 
-    //     optionsData.dishType + optionsData.mealType + optionsData.cuisineType + optionsData.health + optionsData.calories + optionsData.time)
-    //     // after fetching data
-    //     // pass data to get random recipe function
-    //     getRandomRecipe()
-
-    //     // console.log('hits length')
-    //     // console.log(dataJson['hits'].length)
-    // }
-    
-    // React.useEffect(()=>{
-    //     getData()
-    // },[optionsData])
-
-    // // normally it will take fetched data
-    // function getRandomRecipe() {
-    //     let len = dataJson['hits'].length;
-    //     let randomNum = Math.floor(Math.random() * len);
-    //     // console.log('random number and random object')
-    //     // console.log(randomNum)
-    //     setResultRecipe(dataJson['hits'][randomNum]['recipe'])
-    // }
-
     function getRandomRecipe(fetchedData) {
         let len = fetchedData['hits'].length;
         let randomNum = Math.floor(Math.random() * len);
         console.log('len: ' + len);
 
-        // console.log('random number and random object')
-        // console.log(randomNum)
         if(len !==0 ) setResultRecipe(fetchedData['hits'][randomNum]['recipe'])
     }
     
@@ -138,7 +103,7 @@ export default function App() {
         setIsRecipeGenerated(isRecipeGenerated => !isRecipeGenerated)
     }
     return (
-        <div>
+        <div style={{ flex: 1 }}>
             <div className='outer--container'>
             {/* <div className='sides--container'> */}
                 <img src={Fork} alt="" className="fork"/>
@@ -155,7 +120,7 @@ export default function App() {
                 </div>
                 <img src={Knife} alt="" className="knife"/>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
